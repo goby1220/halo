@@ -60,7 +60,7 @@ public class MenuController {
     @PutMapping("{menuId:\\d+}")
     @ApiOperation("Updates a menu")
     public MenuDTO updateBy(@PathVariable("menuId") Integer menuId,
-                            @RequestBody @Valid MenuParam menuParam) {
+            @RequestBody @Valid MenuParam menuParam) {
         // Get the menu
         Menu menu = menuService.getById(menuId);
 
@@ -85,7 +85,7 @@ public class MenuController {
     }
 
     @GetMapping("teams")
-    @ApiOperation(("Lists all menu teams"))
+    @ApiOperation("Lists all menu teams")
     public List<String> teams() {
         return menuService.listAllTeams();
     }
